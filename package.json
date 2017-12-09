@@ -1,0 +1,30 @@
+{
+  "name": "bs-styletron-react",
+  "version": "0.1.0",
+  "description": "BuckleScript bindings for styletron-react",
+  "main": "src/Styletron.re",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "prepare": "npm link bs-platform"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astrada/bs-styletron-react.git"
+  },
+  "keywords": ["bucklescript", "react", "styletron", "reason"],
+  "author": "Alessandro Strada <alessandro.strada@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astrada/bs-styletron-react/issues"
+  },
+  "homepage": "https://github.com/astrada/bs-styletron-react",
+  "dependencies": {
+    "styletron-client": "^3.0.0-rc.3",
+    "styletron-react": "^3.0.0-rc.3"
+  },
+  "devDependencies": {
+    "reason-react": "^0.3.0"
+  }
+}
