@@ -1,6 +1,6 @@
 {
   "name": "bs-styletron-react",
   "sources": ["src"],
-  "bs-dependencies": ["reason-react"],
+  "bs-dependencies": ["reason-react", "bs-css-core"],
   "refmt": 3
 }

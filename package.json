@@ -13,7 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/astrada/bs-styletron-react.git"
   },
-  "keywords": ["bucklescript", "react", "styletron", "reason"],
+  "keywords": [
+    "bucklescript",
+    "react",
+    "styletron",
+    "reason"
+  ],
   "author": "Alessandro Strada <alessandro.strada@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -25,6 +30,7 @@
     "styletron-react": "^3.0.0-rc.3"
   },
   "devDependencies": {
+    "bs-css-core": "^0.1.0",
     "reason-react": "^0.3.0"
   }
 }
