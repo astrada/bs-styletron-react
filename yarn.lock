@@ -3,8 +3,8 @@
 
 
 "@types/react@*":
-  version "16.0.26"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.26.tgz#ccc243302d2a4b4a02923ddc1263599d957d3174"
+  version "16.0.30"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.30.tgz#cca9b180160004df574519c3d7c559fb181d545f"
 
 asap@~2.0.3:
   version "2.0.6"
@@ -15,8 +15,8 @@ bowser@^1.7.3:
   resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.8.1.tgz#49785777e7302febadb1a5b71d9a646520ed310d"
 
 bs-css-core@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/bs-css-core/-/bs-css-core-0.1.0.tgz#cd3531615b9a18f2ffb4ea30fcc3de249b241988"
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/bs-css-core/-/bs-css-core-0.1.1.tgz#1e923615b931b221026fa87b3fe9475d086c91bf"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -136,9 +136,9 @@ setimmediate@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
 
-styletron-client@^3.0.0-rc.3:
-  version "3.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/styletron-client/-/styletron-client-3.0.0-rc.3.tgz#41fbca51a6bd22ba6145df1cb57cfaada119aeab"
+styletron-client@^3.0.0-rc.3, styletron-client@^3.0.0-rc.5:
+  version "3.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/styletron-client/-/styletron-client-3.0.0-rc.5.tgz#275ca0b5f971d244f0e42079ad570be9c31a2a70"
   dependencies:
     styletron-core "^3.0.0-rc.3"
 
@@ -147,12 +147,12 @@ styletron-core@^3.0.0-rc.3:
   resolved "https://registry.yarnpkg.com/styletron-core/-/styletron-core-3.0.0-rc.3.tgz#9468e275d9085d2e5d6d6468cc6d8733dbfa3cba"
 
 styletron-react@^3.0.0-rc.3:
-  version "3.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/styletron-react/-/styletron-react-3.0.0-rc.3.tgz#80fdca3360270b2841aecb62c56c5b2ca8365a9a"
+  version "3.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/styletron-react/-/styletron-react-3.0.0-rc.5.tgz#99b3e85b9c59eac78a4c3f1110a9774e5ede5e60"
   dependencies:
     "@types/react" "*"
     prop-types "^15.5.8"
-    styletron-client "^3.0.0-rc.3"
+    styletron-client "^3.0.0-rc.5"
     styletron-server "^3.0.0-rc.3"
     styletron-utils "^3.0.0-rc.3"
 
