@@ -13,7 +13,7 @@ module React: {
       ReasonReact.noRetainedProps,
       ReasonReact.actionless
     );
-  type styleObject('style) = Css.styleObject('style);
+  type styleObject('style) = BsCssCore.Css.styleObject('style);
   type propsObject('props) = Js.t({..} as 'props);
   type rule('props, 'style) = propsObject('props) => styleObject('style);
   type base = [ | `String(string) | `ReactClass(ReasonReact.reactClass)];
