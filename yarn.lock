@@ -14,9 +14,13 @@ bowser@^1.7.3:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.8.1.tgz#49785777e7302febadb1a5b71d9a646520ed310d"
 
-bs-css-core@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/bs-css-core/-/bs-css-core-0.2.0.tgz#06beabe54c97cf93d9911928993db4662dd0c058"
+bs-css-core@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/bs-css-core/-/bs-css-core-0.2.1.tgz#5592e4ea9c316e994dd6054daa715a611478a5b3"
+
+bs-platform@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.1.0.tgz#63560ff8f7142c9c0631559df1c35590b9f6d8b2"
 
 core-js@^1.0.0:
   version "1.2.7"
