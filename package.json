@@ -6,6 +6,7 @@
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
+    "prepare": "npm link bs-platform",
     "clean": "bsb -clean-world"
   },
   "repository": {
@@ -25,12 +26,11 @@
   },
   "homepage": "https://github.com/astrada/bs-styletron-react",
   "dependencies": {
-    "styletron-client": "^3.0.0-rc.3",
-    "styletron-react": "^3.0.0-rc.3"
+    "styletron-client": "^3.0.2",
+    "styletron-react": "^3.0.3"
   },
   "devDependencies": {
     "bs-css-core": "^0.2.1",
-    "bs-platform": "^2.1.0",
-    "reason-react": "^0.3.0"
+    "reason-react": "^0.3.1"
   }
 }

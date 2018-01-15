@@ -32,6 +32,7 @@ high-performance. Features include:
 
 ### Prerequisites
 
+    npm install --global bs-platform
     yarn install
 
 ### How to compile
