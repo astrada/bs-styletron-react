@@ -1,6 +1,6 @@
 {
-  "name": "bs-styletron-react",
-  "version": "0.1.2",
+  "name": "@astrada/bs-styletron-react",
+  "version": "0.1.3",
   "description": "BuckleScript bindings for styletron-react",
   "main": "src/Styletron.re",
   "scripts": {

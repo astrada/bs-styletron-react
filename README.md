@@ -43,8 +43,8 @@ high-performance. Features include:
 
 Run:
 
-    yarn add --dev bs-styletron-react
+    yarn add --dev @astrada/bs-styletron-react
 
-to add the library to your project dependencies. And add `bs-styletron-react`
-to `dependencies` node of your `bsconfig.json`.
+to add the library to your project dependencies. And add
+`@astrada/bs-styletron-react` to `dependencies` node of your `bsconfig.json`.
 
