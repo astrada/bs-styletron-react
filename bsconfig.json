@@ -1,6 +1,6 @@
 {
   "name": "@astrada/bs-styletron-react",
   "sources": ["src"],
-  "bs-dependencies": ["reason-react", "bs-css-core"],
+  "bs-dependencies": ["reason-react"],
   "refmt": 3
 }

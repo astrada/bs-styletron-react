@@ -10,8 +10,8 @@ module Client = {
     "default";
   let make = (~serverStyles=?, ~options=?, ()) =>
     createInstance(
-      Js.Nullable.from_opt(serverStyles),
-      Js.Nullable.from_opt(options)
+      Js.Nullable.fromOption(serverStyles),
+      Js.Nullable.fromOption(options)
     );
 };
 
@@ -22,7 +22,7 @@ module React = {
       ReasonReact.noRetainedProps,
       ReasonReact.actionless
     );
-  type styleObject('style) = BsCssCore.Css.styleObject('style);
+  type styleObject('style) = Js.t({..} as 'style);
   type propsObject('props) = Js.t({..} as 'props);
   type rule('props, 'style) = Js.t({..} as 'props) => Js.t({..} as 'style);
   type base = [ | `String(string) | `ReactClass(ReasonReact.reactClass)];
