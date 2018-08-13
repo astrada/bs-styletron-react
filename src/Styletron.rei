@@ -23,11 +23,7 @@ module React: {
       ReasonReact.actionless
     );
 
-  type styleObject('style) = Js.t({..} as 'style);
-
-  type propsObject('props) = Js.t({..} as 'props);
-
-  type rule('props, 'style) = propsObject('props) => styleObject('style);
+  type rule('props, 'style) = 'props => 'style;
 
   type base = [ | `String(string) | `ReactClass(ReasonReact.reactClass)];
 
@@ -38,7 +34,7 @@ module React: {
     (
       ~base: base,
       ~rule: rule('props, 'style),
-      ~props: propsObject('props),
+      ~props: 'props,
       'children
     ) =>
     statelessComponent;
@@ -47,7 +43,8 @@ module React: {
     (
       ~rule: rule('props, 'style),
       ~component: statelessComponent,
-      ~make: (~className: string, 'children) => statelessComponent,
+      ~make: (~props: 'props, 'children) => statelessComponent,
+      ~props: 'props,
       'children
     ) =>
     statelessComponent;

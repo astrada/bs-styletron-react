@@ -27,11 +27,7 @@ module React = {
       ReasonReact.actionless
     );
 
-  type styleObject('style) = Js.t({..} as 'style);
-
-  type propsObject('props) = Js.t({..} as 'props);
-
-  type rule('props, 'style) = Js.t({..} as 'props) => Js.t({..} as 'style);
+  type rule('props, 'style) = 'props => 'style;
 
   type base = [ | `String(string) | `ReactClass(ReasonReact.reactClass)];
 
@@ -51,15 +47,15 @@ module React = {
     ReasonReact.wrapJsForReason(~reactClass, ~props, children);
   };
 
-  let makeStyledComponent = (~rule, ~component, ~make, children) => {
+  let makeStyledComponent = (~rule, ~component, ~make, ~props, children) => {
     let reactClass =
       ReasonReact.wrapReasonForJs(~component, jsProps =>
-        make(~className=jsProps##className, children)
+        make(~props=jsProps, children)
       );
     let styledClass = styled(`ReactClass(reactClass), rule);
     ReasonReact.wrapJsForReason(
       ~reactClass=styledClass,
-      ~props=Js.Obj.empty(),
+      ~props,
       children
     );
   };
@@ -68,10 +64,15 @@ module React = {
     [@bs.module "styletron-react"]
     external reactClass : ReasonReact.reactClass = "Provider";
 
+    [@bs.deriving abstract]
+    type props = {
+      value: Core.t
+    };
+
     let make = (~value=Client.make(), children) =>
       ReasonReact.wrapJsForReason(
         ~reactClass,
-        ~props={"value": value},
+        ~props=props(~value),
         children
       );
   };
