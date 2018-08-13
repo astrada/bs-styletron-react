@@ -1,18 +1,22 @@
 module Core = {
   type t;
-  type options = {. prefix: string};
+
+  [@bs.deriving abstract]
+  type options = {
+    [@bs.optional] hydrate: array(Dom.element),
+    [@bs.optional] container: Dom.element,
+    [@bs.optional] prefix: string
+  };
 };
 
 module Client = {
-  [@bs.module "styletron-client"] [@bs.new]
+  [@bs.module "styletron-engine-atomic"] [@bs.new]
   external createInstance :
-    (Js.nullable(array(Dom.element)), Js.nullable(Core.options)) => Core.t =
-    "default";
-  let make = (~serverStyles=?, ~options=?, ()) =>
-    createInstance(
-      Js.Nullable.fromOption(serverStyles),
-      Js.Nullable.fromOption(options)
-    );
+    Js.nullable(Core.options) => Core.t =
+    "Client";
+
+  let make = (~options=?, ()) =>
+    createInstance(Js.Nullable.fromOption(options));
 };
 
 module React = {
@@ -22,10 +26,15 @@ module React = {
       ReasonReact.noRetainedProps,
       ReasonReact.actionless
     );
+
   type styleObject('style) = Js.t({..} as 'style);
+
   type propsObject('props) = Js.t({..} as 'props);
+
   type rule('props, 'style) = Js.t({..} as 'props) => Js.t({..} as 'style);
+
   type base = [ | `String(string) | `ReactClass(ReasonReact.reactClass)];
+
   [@bs.module "styletron-react"] [@bs.val]
   external styled :
     (
@@ -34,11 +43,14 @@ module React = {
     ) =>
     ReasonReact.reactClass =
     "";
+
   let makeStyledClass = (~base, ~rule) => styled(base, rule);
+
   let makeStyled = (~base, ~rule, ~props, children) => {
     let reactClass = styled(base, rule);
     ReasonReact.wrapJsForReason(~reactClass, ~props, children);
   };
+
   let makeStyledComponent = (~rule, ~component, ~make, children) => {
     let reactClass =
       ReasonReact.wrapReasonForJs(~component, jsProps =>
@@ -51,14 +63,17 @@ module React = {
       children
     );
   };
+
   module Provider = {
     [@bs.module "styletron-react"]
-    external reactClass : ReasonReact.reactClass = "StyletronProvider";
-    let make = (~styletron=Client.make(), children) =>
+    external reactClass : ReasonReact.reactClass = "Provider";
+
+    let make = (~value=Client.make(), children) =>
       ReasonReact.wrapJsForReason(
         ~reactClass,
-        ~props={"styletron": styletron},
+        ~props={"value": value},
         children
       );
   };
 };
+

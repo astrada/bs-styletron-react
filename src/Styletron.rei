@@ -1,8 +1,17 @@
-module Core: {type t; type options = {. prefix: string};};
+module Core: {
+  type t;
+
+  [@bs.deriving abstract]
+  type options = {
+    [@bs.optional] hydrate: array(Dom.element),
+    [@bs.optional] container: Dom.element,
+    [@bs.optional] prefix: string
+  };
+};
 
 module Client: {
   let make:
-    (~serverStyles: array(Dom.element)=?, ~options: Core.options=?, unit) =>
+    (~options: Core.options=?, unit) =>
     Core.t;
 };
 
@@ -13,12 +22,18 @@ module React: {
       ReasonReact.noRetainedProps,
       ReasonReact.actionless
     );
+
   type styleObject('style) = Js.t({..} as 'style);
+
   type propsObject('props) = Js.t({..} as 'props);
+
   type rule('props, 'style) = propsObject('props) => styleObject('style);
+
   type base = [ | `String(string) | `ReactClass(ReasonReact.reactClass)];
+
   let makeStyledClass:
     (~base: base, ~rule: rule('props, 'style)) => ReasonReact.reactClass;
+
   let makeStyled:
     (
       ~base: base,
@@ -27,6 +42,7 @@ module React: {
       'children
     ) =>
     statelessComponent;
+
   let makeStyledComponent:
     (
       ~rule: rule('props, 'style),
@@ -35,7 +51,9 @@ module React: {
       'children
     ) =>
     statelessComponent;
+
   module Provider: {
-    let make: (~styletron: Core.t=?, 'children) => statelessComponent;
+    let make: (~value: Core.t=?, 'children) => statelessComponent;
   };
 };
+
